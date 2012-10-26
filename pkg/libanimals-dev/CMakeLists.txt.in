@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 2.6)
+
+project(PKG-LIBANIMALS-DEV)
+
+set(CPACK_PACKAGE_NAME "libanimals-dev")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Animal behaviour development files")
+set(CPACK_PACKAGE_DESCRIPTION "Animal behaviour development files")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "@CMAKE_CURRENT_SOURCE_DIR@/libanimals-dev/PackageDescription.txt")
+
+# Development files require the underlying libraries.
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libanimals (= @VERSION_MAJOR_MINOR_PATCH_BUILD@)")
+set(CPACK_RPM_PACKAGE_REQUIRES "libanimals = @VERSION_MAJOR_MINOR_PATCH_BUILD@")
+
+# Multiple versions of libanimals-dev cannot be installed at the same time.
+set(CPACK_DEBIAN_PACKAGE_REPLACES "libanimals-dev (<< @VERSION_MAJOR_MINOR_PATCH_BUILD@)")
+
+# Following values replaced by configure_file() in pkg/CMakeLists.txt.
+set(VERSION_MAJOR_MINOR_PATCH_BUILD @VERSION_MAJOR_MINOR_PATCH_BUILD@)
+set(INSTALL_DOCS "@INSTALL_DOCS@")
+set(INSTALL_HEADERS "@INSTALL_HEADERS@")
+
+install(
+    FILES
+    ${INSTALL_DOCS}
+    DESTINATION share/doc/libanimals-dev
+    PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+)
+install(
+    FILES
+    ${INSTALL_HEADERS}
+    DESTINATION include
+    PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+)
+
+include(@CMAKE_SOURCE_DIR@/pkg/CMakeCommon.txt)

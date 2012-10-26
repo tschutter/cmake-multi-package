@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 2.6)
+
+project(PKG-LIBANIMALS)
+
+set(CPACK_PACKAGE_NAME "libanimals")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Animal behaviour libraries")
+set(CPACK_PACKAGE_DESCRIPTION "Animal behaviour libraries")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "@CMAKE_CURRENT_SOURCE_DIR@/libanimals/PackageDescription.txt")
+
+# Following values replaced by configure_file() in pkg/CMakeLists.txt.
+set(VERSION_MAJOR_MINOR_PATCH_BUILD @VERSION_MAJOR_MINOR_PATCH_BUILD@)
+set(INSTALL_LIBS "@INSTALL_LIBS@")
+
+install(
+    FILES
+    ${INSTALL_LIBS}
+    DESTINATION lib
+    PERMISSIONS
+        OWNER_READ OWNER_WRITE OWNER_EXECUTE
+        GROUP_READ GROUP_EXECUTE
+        WORLD_READ WORLD_EXECUTE
+)
+
+include(@CMAKE_SOURCE_DIR@/pkg/CMakeCommon.txt)

@@ -1,0 +1,2 @@
+Animals is an exciting exploration of the animal world.
+This package contains the shared libraries.
