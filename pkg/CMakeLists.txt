@@ -6,7 +6,7 @@
 add_custom_target(pkg)
 
 # libanimals, libanimals-dbg
-if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
     get_target_property(TARGET_LOCATION animals DEBUG_LOCATION)
 else()
     get_target_property(TARGET_LOCATION animals LOCATION)
@@ -21,7 +21,7 @@ endif()
 list(APPEND INSTALL_LIBS ${TARGET_LOCATION})
 list(APPEND INSTALL_LIBS ${TARGET_LOCATION_2})
 list(APPEND INSTALL_LIBS ${TARGET_LOCATION_3})
-if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+if("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
     set(BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/libanimals-dbg)
     configure_file(libanimals-dbg/CMakeLists.txt.in ${BUILD_DIR}/CMakeLists.txt @ONLY)
     add_custom_target(

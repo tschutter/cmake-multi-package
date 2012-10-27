@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
+include(@CMAKE_SOURCE_DIR@/pkg/CMakeCommon.txt)
+
 project(PKG-LIBANIMALS-DEV)
 
 set(CPACK_PACKAGE_NAME "libanimals-dev")
@@ -32,4 +34,4 @@ install(
     PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
 )
 
-include(@CMAKE_SOURCE_DIR@/pkg/CMakeCommon.txt)
+include(CPack)
