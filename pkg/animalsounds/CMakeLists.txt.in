@@ -9,6 +9,10 @@ set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Hear the animals talk")
 set(CPACK_PACKAGE_DESCRIPTION "Hear the animals talk")
 set(CPACK_PACKAGE_DESCRIPTION_FILE "@CMAKE_CURRENT_SOURCE_DIR@/animalsounds/PackageDescription.txt")
 
+# Override settings in ../CMakeCommon.txt.
+set(CPACK_DEBIAN_PACKAGE_SECTION "games")
+set(CPACK_RPM_PACKAGE_GROUP "Amusements/Toys/Other")
+
 # Following values replaced by configure_file() in pkg/CMakeLists.txt.
 set(VERSION_MAJOR_MINOR_PATCH_BUILD @VERSION_MAJOR_MINOR_PATCH_BUILD@)
 set(INSTALL_BINS "@INSTALL_BINS@")

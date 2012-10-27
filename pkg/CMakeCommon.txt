@@ -20,6 +20,7 @@ if(DPKG)
         set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
     endif()
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Me <support@example.com>")
+    set(CPACK_DEBIAN_PACKAGE_SECTION "devel")
 endif()
 
 # RPM (Red Hat, CentOS) packaging.
