@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 2.6)
 
 include(@CMAKE_SOURCE_DIR@/pkg/CMakeCommon.txt)
 
-project(PKG-ANIMALS)
+project(PKG-ANIMALSOUNDS)
 
-set(CPACK_PACKAGE_NAME "animals")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Animal behaviour programs")
-set(CPACK_PACKAGE_DESCRIPTION "Animal behaviour programs")
-set(CPACK_PACKAGE_DESCRIPTION_FILE "@CMAKE_CURRENT_SOURCE_DIR@/animals/PackageDescription.txt")
+set(CPACK_PACKAGE_NAME "animalsounds")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Hear the animals talk")
+set(CPACK_PACKAGE_DESCRIPTION "Hear the animals talk")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "@CMAKE_CURRENT_SOURCE_DIR@/animalsounds/PackageDescription.txt")
 
 # Following values replaced by configure_file() in pkg/CMakeLists.txt.
 set(VERSION_MAJOR_MINOR_PATCH_BUILD @VERSION_MAJOR_MINOR_PATCH_BUILD@)

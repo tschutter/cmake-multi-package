@@ -66,17 +66,17 @@ add_custom_target(
 )
 add_dependencies(pkg pkg-libanimals-dev)
 
-# animals
+# animalsounds
 get_target_property(TARGET_LOCATION animaltest LOCATION)
 message(TL  = ${TARGET_LOCATION})
 list(APPEND INSTALL_BINS ${TARGET_LOCATION})
-set(BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/animals)
-configure_file(animals/CMakeLists.txt.in ${BUILD_DIR}/CMakeLists.txt @ONLY)
+set(BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/animalsounds)
+configure_file(animalsounds/CMakeLists.txt.in ${BUILD_DIR}/CMakeLists.txt @ONLY)
 add_custom_target(
-    pkg-animals
+    pkg-animalsounds
     rm -f ${BUILD_DIR}/CPackConfig.cmake
     COMMAND ${CMAKE_COMMAND} .
     COMMAND ${CMAKE_CPACK_COMMAND}
     WORKING_DIRECTORY ${BUILD_DIR}
 )
-add_dependencies(pkg pkg-animals)
+add_dependencies(pkg pkg-animalsounds)

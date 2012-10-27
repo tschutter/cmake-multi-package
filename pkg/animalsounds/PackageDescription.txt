@@ -1,3 +1,3 @@
-Animals is an exciting exploration of the animal world.
+Animalsounds presents the exciting sounds of the animal world.
 This package contains example programs that show the flexibility of
 the animals library.
