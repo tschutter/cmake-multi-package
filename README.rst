@@ -11,8 +11,9 @@ This example was inspired by
 https://github.com/shadowmint/cmake-multi-install.  But the
 cmake-multi-install example has a couple of shortcomings:
 
-* It has multiple levels of indirection where only one level is
-  required.
+* It generates manifest.txt files which are then read for variable
+  settings used to generate CMakeLists.txt files.  The extra hop of
+  the manifest.txt files in unnecessary and confusing.
 
 * It uses add_custom_target() to create a "deb" target, but the
   DEPENDS option of add_custom_target() is meant for file-level
@@ -37,3 +38,6 @@ In addition, this example has some additional features:
 
 * It shows how to deal with SOVERSION issues when installing shared
   libraries.
+
+* It shows how to deal with /lib/ vs. /lib32/ vs. /lib64/ issues with
+  DEB (Debian) and RPM (Red Hat).
